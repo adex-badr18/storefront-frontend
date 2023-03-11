@@ -1,0 +1,32 @@
+.nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    background: #33B5E5;
+    color: #fff;
+    padding: 20px;
+}
+
+.header {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 30px;
+    padding-right: 30px;
+}
+
+.header a {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 20px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.logo a {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: xx-large;
+    color: #ffffff;
+    font-weight: 700;
+    text-decoration: none;
+}
