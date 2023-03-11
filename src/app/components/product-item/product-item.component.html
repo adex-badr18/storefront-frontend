@@ -1,6 +1,6 @@
 <div class="product-container">
-    <a routerLink="/product/{{ product.id }}">
-        <img src="{{ product.url }}" class="product-image" alt="Image of {{ product.name }}">
+    <a routerLink="/product">
+        <img src="{{ product.url }}" (click)="addInfo(product)" class="product-image" alt="Image of {{ product.name }}">
     </a>
 
     <div class="product-info">

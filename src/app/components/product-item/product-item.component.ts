@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Product } from 'src/app/model/product';
+import { ProductInfoService } from 'src/app/services/product-info.service';
 
 @Component({
   selector: 'app-product-item',
@@ -9,7 +10,7 @@ import { Product } from 'src/app/model/product';
 export class ProductItemComponent implements OnInit {
   @Input() product: Product;
 
-  constructor() {
+  constructor(private productInfoService: ProductInfoService) {
     this.product = {
       id: 0,
       name: '',
@@ -22,6 +23,9 @@ export class ProductItemComponent implements OnInit {
 
   ngOnInit(): void {
 
+  }
+  addInfo(product: Product) {
+    this.productInfoService.addInfo(product);
   }
 
 }
