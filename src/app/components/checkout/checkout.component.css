@@ -1,0 +1,23 @@
+.checkout-container {
+    display: flex;
+    flex-direction: column;
+    margin: 2em 5em;
+    gap: 10px;
+}
+
+.checkout-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+#checkout-product-table {
+    vertical-align: middle;
+}
+
+.checkout-footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}

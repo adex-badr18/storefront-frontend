@@ -1,0 +1,38 @@
+<div class="checkout-container">
+    <div class="checkout-info">
+        <h1 style="color:#33B5E5;">Success!🎉</h1>
+        <p>Thank you, <strong>{{order[0].fullName}}</strong> </p>
+        <p>Your <strong>${{order[0].amount}}</strong> order is confirmed!</p>
+    </div>
+
+    <div class="checkout">
+        <table class="table table-striped" id="checkout-product-table">
+            <thead>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Product</th>
+                    <th scope="col">Unit Price</th>
+                    <th scope="col">Quantity</th>
+                    <th scope="col">Amount</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let product of order[0].products; index as i">
+                    <th scope="row">{{ i + 1 }}</th>
+                    <td>
+                        <img [src]="product.url" class="me-2" style="width: 50px" />
+                        {{ product.name }}
+                    </td>
+                    <td>{{ product.price | number }}</td>
+                    <td>{{ product.quantity | number }}</td>
+                    <td>{{ product.quantity * product.price | number }}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="checkout-footer">
+        <p>Please allow 1-3 business day(s) for shipping.</p>
+        <button routerLink="/" class="btn btn-primary">Back to product list</button>
+    </div>
+
+</div>
