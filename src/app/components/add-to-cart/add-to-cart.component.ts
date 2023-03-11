@@ -29,15 +29,4 @@ export class AddToCartComponent implements OnInit {
     this.cartService.addToCart(product);
     alert(`${product.name} added to cart!`);
   }
-
-  increaseQuantity(product: Product): Product {
-    product.quantity += 1;
-    return product;
-  }
-
-  decreaseQuantity(product: Product): Product {
-    product.quantity -= 1;
-    return product;
-  }
-
 }
