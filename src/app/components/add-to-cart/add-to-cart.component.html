@@ -1,0 +1,7 @@
+<div class="add-to-cart">
+    <div class="quantity">
+        Quantity: <input type="number" name="quantity" id="quantity" [(ngModel)]="product.quantity"
+            value="{{ product.quantity }}">
+    </div>
+    <button class="btn btn-primary" (click)="addToCart(product)">Add to cart</button>
+</div>
