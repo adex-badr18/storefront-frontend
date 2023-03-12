@@ -5,10 +5,11 @@
             <img src="{{ product.url }}" alt="" />
         </div>
         <div class="detail-item">
-            <h1>{{ product.name }}</h1>
-            <p>${{ product.price }}</p>
-            <p>{{ product.description }}</p>
-
+            <div class="info">
+                <h1>{{ product.name }}</h1>
+                <p>${{ product.price }}</p>
+                <p>{{ product.description }}</p>
+            </div>
             <div class="detail-footer">
                 <app-add-to-cart [product]="product"></app-add-to-cart>
                 <a routerLink="/" class="back-link">Back to product list</a>
