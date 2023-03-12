@@ -11,7 +11,9 @@
     justify-content: center;
     flex-direction: row;
     flex-wrap: wrap;
-    margin: 0px 80px;
+    margin-left: 80px;
+    margin-right: 80px;
+    margin-bottom: 30px;
     gap: 30px;
     font-family: 'Alata';
     background-color: #ecf1f4;
