@@ -7,9 +7,8 @@
 }
 
 .product-container {
-    margin-top: 64px;
+    margin-top: 30px;
     display: flex;
-    /* flex-wrap: wrap; */
     flex-direction: column;
     align-items: center;
     justify-content: flex-start;
@@ -18,7 +17,12 @@
 .product-info {
     display: flex;
     flex-direction: row;
-    gap: 7em;
+    gap: 5em;
     margin-top: 10px;
     font-family: 'Alata';
+}
+
+.product-info div {
+    font-size: 20px;
+    font-weight: 900;
 }
