@@ -4,6 +4,7 @@
     justify-content: space-between;
     gap: 30px;
     margin-top: 64px;
+    font-family: 'Alata';
 }
 
 
@@ -69,6 +70,7 @@ img {
     justify-content: center;
     margin-top: 64px;
     font-size: 20px;
+    font-family: 'Alata';
 }
 
 /* .cart-container {
