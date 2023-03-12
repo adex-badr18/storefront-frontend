@@ -1,17 +1,18 @@
-<a routerLink="/" *ngIf="!product">Back to product list</a>
-<div class="details-container">
-    <div class="img">
-        <img src="{{ product.url }}" alt="" />
-    </div>
-    <div class="detail-item">
-        <h1>{{ product.name }}</h1>
-        <p>${{ product.price }}</p>
-        <p>{{ product.description }}</p>
+<div class="container">
+    <a routerLink="/" *ngIf="product.name === ''">Back to product list</a>
+    <div class="details-container" *ngIf="product.name !== ''">
+        <div class="img">
+            <img src="{{ product.url }}" alt="" />
+        </div>
+        <div class="detail-item">
+            <h1>{{ product.name }}</h1>
+            <p>${{ product.price }}</p>
+            <p>{{ product.description }}</p>
 
-        <div class="detail-footer">
-            <app-add-to-cart [product]="product"></app-add-to-cart>
-            <a routerLink="/" class="back-link">Back to product list</a>
+            <div class="detail-footer">
+                <app-add-to-cart [product]="product"></app-add-to-cart>
+                <a routerLink="/" class="back-link">Back to product list</a>
+            </div>
         </div>
     </div>
-
 </div>
