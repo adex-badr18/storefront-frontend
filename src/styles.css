@@ -9,7 +9,6 @@
     src: url('./assets/fonts/Anton-Regular.ttf');
 }
 
-@import "~@angular/material/prebuilt-themes/indigo-pink.css";
 
 html,
 body {

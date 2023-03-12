@@ -30,3 +30,11 @@
     font-weight: 700;
     text-decoration: none;
 }
+
+.logo a span {
+    font-size: 40px;
+}
+
+.header a span {
+    font-size: 20px;
+}
