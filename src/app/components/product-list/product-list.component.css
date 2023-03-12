@@ -11,6 +11,22 @@
     justify-content: center;
     flex-direction: row;
     flex-wrap: wrap;
+    margin: 0px 80px;
     gap: 30px;
     font-family: 'Alata';
+    background-color: #ecf1f4;
+}
+
+.title {
+    background-color: #77c8e9;
+    color: white;
+    font-family: 'Alata';
+    margin-left: 80px;
+    margin-right: 80px;
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 30px;
 }

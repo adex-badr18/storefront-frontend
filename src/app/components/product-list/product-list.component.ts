@@ -8,6 +8,7 @@ import { ProductService } from 'src/app/services/product.service';
   styleUrls: ['./product-list.component.css']
 })
 export class ProductListComponent implements OnInit {
+  title: string = 'Top deals';
   products: Product[] = [];
 
   constructor(private productService: ProductService) { }
