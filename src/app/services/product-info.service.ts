@@ -5,24 +5,22 @@ import { Product } from '../model/product';
   providedIn: 'root'
 })
 export class ProductInfoService {
-  product: Product[] = [];
+  product: Product = {
+    id: 0,
+    name: '',
+    price: 0,
+    description: '',
+    url: '',
+    quantity: 0
+  };
 
   constructor() { }
 
-  showInfo(): Product[] {
+  showInfo(): Product {
     return this.product;
   }
 
   addInfo(product: Product) {
-    for (let prod of this.product) {
-      if (prod === product) {
-        return;
-      }
-    }
-    this.product.push(product);
-  }
-
-  clearInfo(): void {
-    this.product = [];
+    this.product = product;
   }
 }
