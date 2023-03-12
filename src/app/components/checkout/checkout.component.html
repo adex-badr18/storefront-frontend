@@ -2,7 +2,7 @@
     <div class="checkout-info">
         <h1 style="color:#33B5E5;">Success!🎉</h1>
         <p>Thank you, <strong>{{order[0].fullName}}</strong> </p>
-        <p>Your <strong>${{order[0].amount}}</strong> order is confirmed!</p>
+        <p>Your <strong>${{order[0].amount.toFixed(2)}}</strong> order is confirmed!</p>
     </div>
 
     <div class="checkout">
