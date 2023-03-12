@@ -9,19 +9,22 @@ import { ProductInfoService } from 'src/app/services/product-info.service';
   styleUrls: ['./product-details.component.css']
 })
 export class ProductDetailsComponent implements OnInit {
-  product: Product[] = [];
+  product: Product = {
+    id: 0,
+    name: '',
+    price: 0,
+    description: '',
+    url: '',
+    quantity: 0
+  };
 
   constructor(
     private cartService: CartServiceService,
     private productInfoService: ProductInfoService) { }
 
   ngOnInit(): void {
-    this.product = this.productInfoService.showInfo();
-  }
 
-  clearInfo() {
-    this.productInfoService.clearInfo();
-    this.product = [];
+    this.product = this.productInfoService.showInfo();
   }
 
   addToCart(product: Product) {
