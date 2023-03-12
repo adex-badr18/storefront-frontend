@@ -57,6 +57,7 @@ export class CartComponent implements OnInit {
     this.cartService.removeFromCart(product);
     this.cart = this.cart.filter(prod => prod !== product);
     this.computeTotal();
+    alert(`${product.name} has been removed from the cart.`);
   }
 
   onSubmit() {
