@@ -13,35 +13,15 @@ import { Router } from '@angular/router';
 })
 export class CartComponent implements OnInit {
   cart: Product[] = [];
+  order: Order[] = [];
   amount: number = 0;
-  creditRegex: RegExp = /^\d+$/;
 
   constructor(private cartService: CartServiceService, private orderService: OrderService, private router: Router) { }
 
   ngOnInit(): void {
     this.cart = this.cartService.getCart();
+    this.order = this.orderService.getOrders();
     this.computeTotal();
-  }
-
-  userForm = new FormGroup({
-    fullName: new FormControl('', [
-      Validators.required,
-      Validators.minLength(8),
-    ]),
-    address: new FormControl('', [
-      Validators.required,
-      Validators.minLength(10),
-    ]),
-    creditcard: new FormControl('', [
-      Validators.required,
-      Validators.minLength(16),
-      Validators.maxLength(16),
-      Validators.pattern(this.creditRegex),
-    ]),
-  });
-
-  getControl(name: any): AbstractControl | null {
-    return this.userForm.get(name);
   }
 
   computeTotal(): void {
@@ -57,22 +37,11 @@ export class CartComponent implements OnInit {
     this.cartService.removeFromCart(product);
     this.cart = this.cart.filter(prod => prod !== product);
     this.computeTotal();
+
     alert(`${product.name} has been removed from the cart.`);
   }
 
-  onSubmit() {
-    // this.submitted = true;
-    // console.log(this.submitted);
-    if (this.userForm.invalid) {
-      return;
-    }
-    let orders: Order = {
-      amount: this.amount,
-      fullName: this.userForm.value.fullName as string,
-      products: this.cart
-    };
-    this.orderService.addOrder(orders);
-
+  onSubmit(value: any) {
     this.router.navigate(['/checkout']);
   }
 }

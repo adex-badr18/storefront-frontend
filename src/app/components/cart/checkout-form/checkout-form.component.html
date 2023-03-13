@@ -1,0 +1,64 @@
+<div class="cart-form">
+    <form *ngIf="cart.length !== 0" [formGroup]="userForm" (ngSubmit)="userForm.status !== 'INVALID' && onSubmit()">
+        <div class="form-group">
+            <label for="fullName" class="form-label">Full Name</label>
+            <input type="text" class="form-control" placeholder="Minimum of 8 characters" id="fullName"
+                formControlName="fullName" [ngClass]="{
+                        error:
+                          getControl('fullName')?.errors &&
+                          getControl('fullName')?.touched
+                      }" />
+            <div *ngIf="
+                        getControl('fullName')?.errors &&
+                        getControl('fullName')?.touched
+                      ">
+                <small class="text-danger" *ngIf="getControl('fullName')?.errors?.['required']">Full Name is
+                    required</small>
+                <small class="text-danger" *ngIf="getControl('fullName')?.errors?.['minlength']">Must be at least 8
+                    characters.</small>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="label" for="address">Address</label>
+            <input type="text" class="form-control" id="address" placeholder="Minimum of 10 characters" required
+                minlength="10" name="address" formControlName="address" [ngClass]="{
+                        error:
+                          getControl('address')?.errors &&
+                          getControl('address')?.touched
+                      }" />
+            <div *ngIf="
+                        getControl('address')?.errors && getControl('address')?.touched
+                      ">
+                <small class="text-danger" *ngIf="getControl('address')?.errors?.['required']">Address is
+                    required.</small>
+                <small class="text-danger" *ngIf="getControl('address')?.errors?.['minlength']">Must be at least 10
+                    characters.</small>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="creditcard" class="label">Credit Card Number</label>
+            <input type="text" class="form-control input" id="creditcard" aria-describedby="creditcard"
+                placeholder="16-digit number" name="creditcard" required minlength="16" maxlength="16"
+                formControlName="creditcard" [ngClass]="{
+                        error:
+                          getControl('creditcard')?.errors &&
+                          getControl('creditcard')?.touched
+                      }" />
+            <div *ngIf="
+                        getControl('creditcard')?.errors &&
+                        getControl('creditcard')?.touched
+                      ">
+                <small class="text-danger" *ngIf="getControl('creditcard')?.errors?.['required']">Credit Card is
+                    required.</small>
+                <small class="text-danger"
+                    *ngIf="getControl('creditcard')?.errors?.['pattern'] || getControl('creditcard')?.errors?.['minlength']">Please
+                    enter a valid credit card number.</small>
+            </div>
+            <small id="creditcard" class="form-text text-muted label">We'll never share your payment details with
+                anyone
+                else.</small>
+        </div>
+        <input type="submit" class="btn btn-primary label" [disabled]="userForm.status === 'INVALID'"
+            value="Checkout" />
+    </form>
+</div>

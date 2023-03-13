@@ -15,6 +15,7 @@ import { AddToCartComponent } from './components/add-to-cart/add-to-cart.compone
 import { CheckoutComponent } from './components/checkout/checkout.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatIconModule } from '@angular/material/icon';
+import { CheckoutFormComponent } from './components/cart/checkout-form/checkout-form.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { MatIconModule } from '@angular/material/icon';
     ProductDetailsComponent,
     CartComponent,
     AddToCartComponent,
-    CheckoutComponent
+    CheckoutComponent,
+    CheckoutFormComponent
   ],
   imports: [
     BrowserModule,
